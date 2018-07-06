@@ -1,20 +1,96 @@
+<?php 
+   $data['discord']['url']='http://discord.gg/3mvFaCF';
+   $data['discord']['text']='/r/PublicFreakout Discord';
+   $data['server'] = $_SERVER;
+   $data['url'] = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+   $data['escaped_url'] = htmlspecialchars($data['url'], ENT_QUOTES, 'UTF-8');
+   $data['uri']=$_SERVER['REQUEST_URI'];
+   $data['uri_arr'] = explode('/', $data['uri']);
+   $data['uri_arr_count'] = count($data['uri_arr']);
+   $data['id'] = redditid($data);
+   $data['video']['file']=$data['id'].'.mp4';
+   $data['video']['scheme']='https://pf-mirror-1.nyc3.digitaloceanspaces.com/videos/';
+   $data['video']['url']=$data['video']['scheme'].$data['video']['file'];
+   $data['video']['image_url']='https://i.imgur.com/0nepAeW.png';
+   $data['redditurl'] = 'https://www.reddit.com/'.$data['id'].'/';
+   function redditid($data){
+      $short=3;
+      $long=7;
+      if($data['uri_arr_count']==$short){//for uris that look like this: '/8whh7h/'
+         $id=$data['uri_arr'][1];
+      }elseif($data['uri_arr_count']==$long){//for uris that look like this: '/r/PublicFreakout/comments/8whh7h/too_drunk_for_a_piss/'
+         $id=$data['uri_arr'][4];
+      }else{
+         $id=false;
+      }
+      return $id;
+   }
+?>
 <!doctype html>
 <html>
    <head>
       <title>Mirror Bot</title>
+      <link href="https://vjs.zencdn.net/7.0.5/video-js.css" rel="stylesheet">
+      <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+      <script src="http://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+      <style type="text/css">
+      html{
+         min-height:100%;
+         min-width:100%;
+      }
+      body{
+         padding: 0 0 20px 0;
+         margin: 0 auto;
+         font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+         color: #f0e7d5;
+         font-weight: normal;
+         background: #252525;
+         background-attachment: fixed;
+         background: linear-gradient(#2a2a29, #1c1c1c);
+         text-align:center;
+       }
+       .video-js{
+         margin:0 auto;
+         width:100%;
+         max-width:800px;
+         min-height:500px;
+      }
+      a:link{color:inherit}
+      a:active{color:inherit}
+      a:visited{color:inherit}
+      a:hover{color:inherit}
+      </style>
    </head>
    <body>
-<?php 
-      $url =  "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
-      $escaped_url = htmlspecialchars( $url, ENT_QUOTES, 'UTF-8' );
-      echo '<a href="' . $escaped_url . '">' . $escaped_url . '</a>';
-?>
-   <script>
-   function php_data(){
-      let php_data=<?php echo json_encode($_SERVER);?>;
-      return php_data;
-   }
-   let data=php_data();
-   </script>
+      <header>
+         <h1><a href="https://www.reddit.com/r/PublicFreakout" title="Go to /r/PublicFreakout">/r/PublicFreakout</a> Mirror Bot, Reddit ID:<?php echo $data['id'];?></h1>
+      </header>
+      <video id="videoPlayer" class="video-js" controls autoplay preload="auto" width="800" height="500" poster="<?php echo $data['video']['image_url'];?>" data-setup="{}">
+          <source src="<?php echo $data['video']['url'];?>" type='video/mp4'>
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a web browser that
+            <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+          </p>
+      </video>
+      <?php
+         echo '<p>Permalink: <a href="' . $data['escaped_url'] . '" target="_blank" rel="noopener">' . $data['escaped_url'] . '</a></p>';
+         echo '<p>Reddit Post: <a href="' . $data['redditurl'] . '" target="_blank" rel="noopener">' . $data['redditurl'] . '</a></p>';
+         echo '<p><a href="' . $data['discord']['url'] . '" target="_blank" rel="noopener">' . $data['discord']['text'] . '</a></p>';
+         echo '<p><a href="https://www.reddit.com/r/PublicFreakout" target="_blank" rel="noopener">Back to /r/PublicFreakout</a></p>';
+      ?>
+      <script src="https://vjs.zencdn.net/7.0.5/video.js"></script>
+      <script type="text/javascript">
+         // var mirror = decodeURIComponent(getQueryVariable("url"));
+         // document.querySelector("#videoPlayer > source").src = mirror;   
+         var player = videojs('videoPlayer');
+         player.play();
+      </script>
+      <script>
+      function php_data(){
+         let php_data=<?php echo json_encode($data);?>;
+         return php_data;
+      }
+      let data=php_data();
+      </script>
    </body>
 </html>
