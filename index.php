@@ -1,7 +1,8 @@
 <?php 
-   $data['discord']['url']='http://discord.gg/3mvFaCF';
+   $data['discord']['url']='https://discord.gg/3mvFaCF';
    $data['discord']['text']='/r/PublicFreakout Discord';
    $data['server'] = $_SERVER;
+   $data['EE']='https://imgur.com/QExET6E';
    $data['url'] = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
    $data['escaped_url'] = htmlspecialchars($data['url'], ENT_QUOTES, 'UTF-8');
    $data['uri']=$_SERVER['REQUEST_URI'];
@@ -48,7 +49,7 @@
 <html>
    <head>
       <?php echo '<title>'.$data['title'].'</title>'; ?>
-      <link href="https://vjs.zencdn.net/7.0.5/video-js.css" rel="stylesheet">
+      <link href="http://vjs.zencdn.net/7.0.5/video-js.css" rel="stylesheet">
       <style type="text/css">
       html{
          min-height:100%;
