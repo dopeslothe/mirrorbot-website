@@ -15,10 +15,10 @@
    $data['redditurl'] = 'https://www.reddit.com/'.$data['id'].'/';
    if (empty($data['id'])) {
       $data['short_url']='';
-      $data['title']='<title>/r/PublicFreakout Mirror Bot</title>';
+      $data['title']='/r/PublicFreakout Mirror Bot';
       $data['video_player']='';
    }else{
-      $data['short_url'] = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/'.$data['id'];
+      $data['short_url'] = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/'.$data['id'].'/';
       $data['title']='/r/PublicFreakout Mirror Bot - Video ID:'.$data['id'];
       $data['video']['player']=videoplayer($data);
    }
@@ -98,9 +98,7 @@
       ?>
       <script type="text/javascript"> 
          var player = videojs('videoPlayer');
-         DomReady.ready(function(){
-            player.play();
-         });
+         player.play();
       </script>
       <script>
       function php_data(){
