@@ -13,6 +13,15 @@
    $data['video']['url']=$data['video']['scheme'].$data['video']['file'];
    $data['video']['image_url']='https://i.imgur.com/0nepAeW.png';
    $data['redditurl'] = 'https://www.reddit.com/'.$data['id'].'/';
+   if (empty($data['id'])) {
+      $data['short_url']='';
+      $data['title']='<title>/r/PublicFreakout Mirror Bot</title>';
+      $data['video_player']='';
+   }else{
+      $data['short_url'] = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/'.$data['id'];
+      $data['title']='<title>/r/PublicFreakout Mirror Bot - Video ID:'.$data['id'].'</title>';
+      $data['video']['player']=videoplayer($data);
+   }
    function redditid($data){
       $short=3;
       $long=7;
@@ -21,18 +30,25 @@
       }elseif($data['uri_arr_count']==$long){//for uris that look like this: '/r/PublicFreakout/comments/8whh7h/too_drunk_for_a_piss/'
          $id=$data['uri_arr'][4];
       }else{
-         $id=false;
+         $id='';
       }
       return $id;
+   }
+   function videoplayer($data){
+      return'<video id="videoPlayer" class="video-js" controls autoplay preload="auto" width="800" height="500" poster="'.$data['video']['image_url'].'" data-setup="{}">
+          <source src="'.$data['video']['url'].'" type="video/mp4">
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a web browser that
+            <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+          </p>
+      </video>';
    }
 ?>
 <!doctype html>
 <html>
    <head>
-      <title>Mirror Bot</title>
+      <?php echo $data['title']; ?>
       <link href="https://vjs.zencdn.net/7.0.5/video-js.css" rel="stylesheet">
-      <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-      <script src="http://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
       <style type="text/css">
       html{
          min-height:100%;
@@ -55,33 +71,32 @@
          max-width:800px;
          min-height:500px;
       }
-      a:link{color:inherit}
-      a:active{color:inherit}
-      a:visited{color:inherit}
-      a:hover{color:inherit}
+      a:link,
+      a:active,
+      a:visited,
+      a:hover{
+         color:inherit;
+      }
       </style>
    </head>
    <body>
       <header>
-         <h1><a href="https://www.reddit.com/r/PublicFreakout" title="Go to /r/PublicFreakout">/r/PublicFreakout</a> Mirror Bot, Reddit ID:<?php echo $data['id'];?></h1>
+         <h1><?php echo $data['title'];?></h1>
       </header>
-      <video id="videoPlayer" class="video-js" controls autoplay preload="auto" width="800" height="500" poster="<?php echo $data['video']['image_url'];?>" data-setup="{}">
-          <source src="<?php echo $data['video']['url'];?>" type='video/mp4'>
-          <p class="vjs-no-js">
-            To view this video please enable JavaScript, and consider upgrading to a web browser that
-            <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-          </p>
-      </video>
       <?php
-         echo '<p>Permalink: <a href="' . $data['escaped_url'] . '" target="_blank" rel="noopener">' . $data['escaped_url'] . '</a></p>';
-         echo '<p>Reddit Post: <a href="' . $data['redditurl'] . '" target="_blank" rel="noopener">' . $data['redditurl'] . '</a></p>';
+         if (!empty($data['id'])) {
+            echo $data['video']['player'];
+            echo '<p>Permalink: <a href="' . $data['escaped_url'] . '" target="_blank" rel="noopener">' . $data['escaped_url'] . '</a></p>';
+            echo '<p>Short Permalink: <a href="' . $data['short_url'] . '" target="_blank" rel="noopener">' . $data['short_url'] . '</a></p>';
+            echo '<p>Reddit Post: <a href="' . $data['redditurl'] . '" target="_blank" rel="noopener">' . $data['redditurl'] . '</a></p>';
+         }else{
+            echo"<h2>Sorry We don't have a mirror for this.</h2>";
+         }
          echo '<p><a href="' . $data['discord']['url'] . '" target="_blank" rel="noopener">' . $data['discord']['text'] . '</a></p>';
          echo '<p><a href="https://www.reddit.com/r/PublicFreakout" target="_blank" rel="noopener">Back to /r/PublicFreakout</a></p>';
       ?>
       <script src="https://vjs.zencdn.net/7.0.5/video.js"></script>
-      <script type="text/javascript">
-         // var mirror = decodeURIComponent(getQueryVariable("url"));
-         // document.querySelector("#videoPlayer > source").src = mirror;   
+      <script type="text/javascript"> 
          var player = videojs('videoPlayer');
          player.play();
       </script>
