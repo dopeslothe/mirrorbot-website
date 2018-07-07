@@ -8,6 +8,7 @@
    $data['uri_arr'] = explode('/', $data['uri']);
    $data['uri_arr_count'] = count($data['uri_arr']);
    $data['id'] = redditid($data);
+   $data['id'] = '8wqrmg';
    $data['video']['file']=$data['id'].'.mp4';
    $data['video']['scheme']='https://pf-mirror-1.nyc3.digitaloceanspaces.com/videos/';
    $data['video']['url']=$data['video']['scheme'].$data['video']['file'];
@@ -78,6 +79,7 @@
          color:inherit;
       }
       </style>
+      <script src="https://vjs.zencdn.net/7.0.5/video.js"></script>
    </head>
    <body>
       <header>
@@ -95,10 +97,11 @@
          echo '<p><a href="' . $data['discord']['url'] . '" target="_blank" rel="noopener">' . $data['discord']['text'] . '</a></p>';
          echo '<p><a href="https://www.reddit.com/r/PublicFreakout" target="_blank" rel="noopener">Back to /r/PublicFreakout</a></p>';
       ?>
-      <script src="https://vjs.zencdn.net/7.0.5/video.js"></script>
       <script type="text/javascript"> 
          var player = videojs('videoPlayer');
-         player.play();
+         DomReady.ready(function(){
+            player.play();
+         });
       </script>
       <script>
       function php_data(){
