@@ -99,12 +99,6 @@
          echo '<p><a href="' . $data['discord']['url'] . '" target="_blank" rel="noopener">' . $data['discord']['text'] . '</a></p>';
          echo '<p><a href="https://www.reddit.com/r/PublicFreakout" target="_blank" rel="noopener">Back to /r/PublicFreakout</a></p>';
       ?>
-      <script type="text/javascript">
-         domready(function () {
-            let player = videojs('videoPlayer');
-            player.play();  
-         });
-      </script>
       <script>
       function php_data(){
          let php_data=<?php echo json_encode($data);?>;
