@@ -80,6 +80,7 @@
       }
       </style>
       <script src="https://vjs.zencdn.net/7.0.5/video.js"></script>
+      <script src="/ready.min.js"></script>
    </head>
    <body>
       <header>
@@ -97,9 +98,11 @@
          echo '<p><a href="' . $data['discord']['url'] . '" target="_blank" rel="noopener">' . $data['discord']['text'] . '</a></p>';
          echo '<p><a href="https://www.reddit.com/r/PublicFreakout" target="_blank" rel="noopener">Back to /r/PublicFreakout</a></p>';
       ?>
-      <script type="text/javascript"> 
-         var player = videojs('videoPlayer');
-         player.play();
+      <script type="text/javascript">
+         domready(function () {
+            let player = videojs('videoPlayer');
+            player.play();  
+         });
       </script>
       <script>
       function php_data(){
