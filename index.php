@@ -93,7 +93,8 @@
             echo '<p>Short Permalink: <a href="' . $data['short_url'] . '" target="_blank" rel="noopener">' . $data['short_url'] . '</a></p>';
             echo '<p>Reddit Post: <a href="' . $data['redditurl'] . '" target="_blank" rel="noopener">' . $data['redditurl'] . '</a></p>';
          }else{
-            echo"<h2>Sorry We don't have a mirror for this.</h2>";
+            echo"<h2>Sorry We don't have a mirror for this.</h2>"
+            echo"<img class='ee' src='".$data['ee']."' alt='/r/PublicFreakout'>";
          }
          echo '<p><a href="' . $data['discord']['url'] . '" target="_blank" rel="noopener">' . $data['discord']['text'] . '</a></p>';
          echo '<p><a href="https://www.reddit.com/r/PublicFreakout" target="_blank" rel="noopener">Back to /r/PublicFreakout</a></p>';
