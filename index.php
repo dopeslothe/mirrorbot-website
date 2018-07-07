@@ -8,7 +8,7 @@
    $data['uri_arr'] = explode('/', $data['uri']);
    $data['uri_arr_count'] = count($data['uri_arr']);
    $data['id'] = redditid($data);
-//    $data['id'] = '8wqrmg';
+   $data['id'] = '8wqrmg';
    $data['video']['file']=$data['id'].'.mp4';
    $data['video']['scheme']='https://pf-mirror-1.nyc3.digitaloceanspaces.com/videos/';
    $data['video']['url']=$data['video']['scheme'].$data['video']['file'];
@@ -20,7 +20,7 @@
       $data['video_player']='';
    }else{
       $data['short_url'] = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/'.$data['id'];
-      $data['title']='<title>/r/PublicFreakout Mirror Bot - Video ID:'.$data['id'].'</title>';
+      $data['title']='/r/PublicFreakout Mirror Bot - Video ID:'.$data['id'];
       $data['video']['player']=videoplayer($data);
    }
    function redditid($data){
@@ -48,7 +48,7 @@
 <!doctype html>
 <html>
    <head>
-      <?php echo $data['title']; ?>
+      <?php echo '<title>'.$data['title'].'</title>'; ?>
       <link href="https://vjs.zencdn.net/7.0.5/video-js.css" rel="stylesheet">
       <style type="text/css">
       html{
