@@ -47,8 +47,7 @@
 <!doctype html>
 <html>
    <head>
-      <?php echo '
-      '.$data['title'].'</title>'; ?>
+      <?php echo '<title>'.$data['title'].'</title>'; ?>
       <link href="https://vjs.zencdn.net/7.0.5/video-js.css" rel="stylesheet">
       <style type="text/css">
       html{
