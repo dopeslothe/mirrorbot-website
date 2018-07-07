@@ -98,9 +98,7 @@
       ?>
       <script type="text/javascript"> 
          var player = videojs('videoPlayer');
-         DomReady.ready(function(){
-            player.play();
-         });
+         player.play();
       </script>
       <script>
       function php_data(){
