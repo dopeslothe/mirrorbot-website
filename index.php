@@ -8,7 +8,7 @@
    $data['uri_arr'] = explode('/', $data['uri']);
    $data['uri_arr_count'] = count($data['uri_arr']);
    $data['id'] = redditid($data);
-   $data['id'] = '8wqrmg';
+//    $data['id'] = '8wqrmg';
    $data['video']['file']=$data['id'].'.mp4';
    $data['video']['scheme']='https://pf-mirror-1.nyc3.digitaloceanspaces.com/videos/';
    $data['video']['url']=$data['video']['scheme'].$data['video']['file'];
