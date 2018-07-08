@@ -2,7 +2,7 @@
    $data['discord']['url']='https://discord.gg/3mvFaCF';
    $data['discord']['text']='/r/PublicFreakout Discord';
    $data['server'] = $_SERVER;
-   $data['EE']='https://imgur.com/QExET6E';
+   $data['ee']='https://imgur.com/QExET6E.jpg';
    $data['url'] = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
    $data['escaped_url'] = htmlspecialchars($data['url'], ENT_QUOTES, 'UTF-8');
    $data['uri']=$_SERVER['REQUEST_URI'];
@@ -93,7 +93,7 @@
             echo '<p>Short Permalink: <a href="' . $data['short_url'] . '" target="_blank" rel="noopener">' . $data['short_url'] . '</a></p>';
             echo '<p>Reddit Post: <a href="' . $data['redditurl'] . '" target="_blank" rel="noopener">' . $data['redditurl'] . '</a></p>';
          }else{
-            echo"<h2>Sorry We don't have a mirror for this.</h2>"
+            echo"<h2>Sorry We don't have a mirror for this.</h2>";
             echo"<img class='ee' src='".$data['ee']."' alt='/r/PublicFreakout'>";
          }
          echo '<p><a href="' . $data['discord']['url'] . '" target="_blank" rel="noopener">' . $data['discord']['text'] . '</a></p>';
