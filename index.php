@@ -56,6 +56,8 @@
          min-width:100%;
       }
       body{
+         max-width:100%;
+         overflow:hidden;
          padding: 0 0 20px 0;
          margin: 0 auto;
          font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
