@@ -48,6 +48,7 @@
 <!doctype html>
 <html>
    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <?php echo '<title>'.$data['title'].'</title>'; ?>
       <link href="http://vjs.zencdn.net/7.0.5/video-js.css" rel="stylesheet">
       <style type="text/css">
