@@ -71,13 +71,19 @@
          width:100%;
          max-width:800px;
          min-height:500px;
-      }
-      a:link,
-      a:active,
-      a:visited,
-      a:hover{
-         color:inherit;
-      }
+         }
+         a:link,
+         a:active,
+         a:visited,
+         a:hover{
+            color:inherit;
+         }
+         .ee{
+            width:600px;
+            max-width:100%;
+            margin:0 auto;
+            padding:0;
+         }
       </style>
       <script src="https://vjs.zencdn.net/7.0.5/video.js"></script>
       <script src="/ready.min.js"></script>
