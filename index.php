@@ -57,9 +57,8 @@
          min-width:100%;
       }
       body{
-         max-width:100%;
-         overflow:hidden;
-         padding: 0;
+         max-width: 100%;
+         overflow-x: hidden;
          margin: 0 auto;
          font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
          color: #f0e7d5;
@@ -67,26 +66,26 @@
          background: #252525;
          background-attachment: fixed;
          background: linear-gradient(#2a2a29, #1c1c1c);
-         text-align:center;
+         text-align: center;
        }
        .video-js{
          margin:0 auto;
          width:100%;
          max-width:800px;
          min-height:500px;
-         }
-         a:link,
-         a:active,
-         a:visited,
-         a:hover{
-            color:inherit;
-         }
-         .ee{
-            width:600px;
-            max-width:100%;
-            margin:0 auto;
-            padding:0;
-         }
+       }
+       a:link,
+       a:active,
+       a:visited,
+       a:hover{
+         color:inherit;
+       }
+       .ee{
+         width:600px;
+         max-width:100%;
+         margin:0 auto;
+         padding:0;
+       }
       </style>
       <script src="https://vjs.zencdn.net/7.0.5/video.js"></script>
       <script src="/ready.min.js"></script>
