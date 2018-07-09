@@ -59,7 +59,7 @@
       body{
          max-width:100%;
          overflow:hidden;
-         padding: 0 0 20px 0;
+         padding: 0;
          margin: 0 auto;
          font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
          color: #f0e7d5;
@@ -92,22 +92,22 @@
       <script src="/ready.min.js"></script>
    </head>
    <body>
-      <header>
-         <h1><?php echo $data['title'];?></h1>
-      </header>
-      <?php
-         if (!empty($data['id'])) {
-            echo $data['video']['player'];
-            echo '<p>Permalink: <a href="' . $data['escaped_url'] . '" target="_blank" rel="noopener">' . $data['escaped_url'] . '</a></p>';
-            echo '<p>Short Permalink: <a href="' . $data['short_url'] . '" target="_blank" rel="noopener">' . $data['short_url'] . '</a></p>';
-            echo '<p>Reddit Post: <a href="' . $data['redditurl'] . '" target="_blank" rel="noopener">' . $data['redditurl'] . '</a></p>';
-         }else{
-            echo"<h2>Sorry We don't have a mirror for this.</h2>";
-            echo"<img class='ee' src='".$data['ee']."' alt='/r/PublicFreakout'>";
-         }
-         echo '<p><a href="' . $data['discord']['url'] . '" target="_blank" rel="noopener">' . $data['discord']['text'] . '</a></p>';
-         echo '<p><a href="https://www.reddit.com/r/PublicFreakout" target="_blank" rel="noopener">Back to /r/PublicFreakout</a></p>';
-      ?>
+         <?php
+            if (!empty($data['id'])) {
+               echo $data['video']['player'];
+            }
+            echo '<h1>'.$data['title'].'</h1>';
+            if (!empty($data['id'])) {
+               echo '<p>Permalink: <a href="' . $data['escaped_url'] . '" target="_blank" rel="noopener">' . $data['escaped_url'] . '</a></p>';
+               echo '<p>Short Permalink: <a href="' . $data['short_url'] . '" target="_blank" rel="noopener">' . $data['short_url'] . '</a></p>';
+               echo '<p>Reddit Post: <a href="' . $data['redditurl'] . '" target="_blank" rel="noopener">' . $data['redditurl'] . '</a></p>';
+            }else{
+               echo"<h2>Sorry We don't have a mirror for this.</h2>";
+               echo"<img class='ee' src='".$data['ee']."' alt='/r/PublicFreakout'>";
+            }
+            echo '<p><a href="' . $data['discord']['url'] . '" target="_blank" rel="noopener">' . $data['discord']['text'] . '</a></p>';
+            echo '<p><a href="https://www.reddit.com/r/PublicFreakout" target="_blank" rel="noopener">Back to /r/PublicFreakout</a></p>';
+         ?>
       <script>
       function php_data(){
          let php_data=<?php echo json_encode($data);?>;
