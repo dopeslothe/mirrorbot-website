@@ -12,7 +12,7 @@
    $data['video']['file']=$data['id'].'.mp4';
    $data['video']['scheme']='https://pf-mirror-1.nyc3.digitaloceanspaces.com/videos/';
    $data['video']['url']=$data['video']['scheme'].$data['video']['file'];
-   $data['video']['image_url']='https://i.imgur.com/0nepAeW.png';
+   $data['video']['image_url']='https://i.imgur.com/eqNf328.png';
    $data['redditurl'] = 'https://www.reddit.com/'.$data['id'].'/';
    if (empty($data['id'])) {
       $data['short_url']='';
