@@ -8,7 +8,9 @@
    $data['uri']=$_SERVER['REQUEST_URI'];
    $data['uri_arr'] = explode('/', $data['uri']);
    $data['uri_arr_count'] = count($data['uri_arr']);
-   $data['id'] = redditid($data);
+   $data['urlinfo'] = redditid($data);
+   $data['id'] = $data['urlinfo']['id'];
+   $data['description'] = $data['urlinfo']['description'];
    $data['video']['file']=$data['id'].'.mp4';
    $data['video']['scheme']='https://pf-mirror-1.nyc3.digitaloceanspaces.com/videos/';
    $data['video']['url']=$data['video']['scheme'].$data['video']['file'];
@@ -30,10 +32,17 @@
          $id=$data['uri_arr'][1];
       }elseif($data['uri_arr_count']==$long){//for uris that look like this: '/r/PublicFreakout/comments/8whh7h/too_drunk_for_a_piss/'
          $id=$data['uri_arr'][4];
+         $description=htmlspecialchars(ucfirst(str_replace('_', ' ', $data['uri_arr']['5'])));
       }else{
          $id='';
       }
-      return $id;
+      $return['id']=$id;
+      if(isset($description)){
+         $return['desciption']=$description;
+      }else{
+         $return['description']='';
+      }
+      return $return;
    }
    function videoplayer($data){
       return'<video id="videoPlayer" class="video-js" controls autoplay preload="auto" width="800" height="500" poster="'.$data['video']['image_url'].'" data-setup="{}">
@@ -96,6 +105,9 @@
                echo $data['video']['player'];
             }
             echo '<h1>'.$data['title'].'</h1>';
+            if(!empty($data['description'])){
+               echo '<h2>'.$data['description'].'</h2>';
+            }
             if (!empty($data['id'])) {
                echo '<p>Permalink: <a href="' . $data['escaped_url'] . '" target="_blank" rel="noopener">' . $data['escaped_url'] . '</a></p>';
                echo '<p>Short Permalink: <a href="' . $data['short_url'] . '" target="_blank" rel="noopener">' . $data['short_url'] . '</a></p>';
