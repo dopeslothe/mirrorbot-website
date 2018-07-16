@@ -32,7 +32,7 @@
          $id=$data['uri_arr'][1];
       }elseif($data['uri_arr_count']==$long){//for uris that look like this: '/r/PublicFreakout/comments/8whh7h/too_drunk_for_a_piss/'
          $id=$data['uri_arr'][4];
-         $description=htmlspecialchars(ucfirst(str_replace('_', ' ', $data['uri_arr']['5'])));
+         $description=htmlspecialchars(ucfirst(str_replace('_', ' ', $data['uri_arr']['5'])), ENT_QUOTES, 'UTF-8');
       }else{
          $id='';
       }
