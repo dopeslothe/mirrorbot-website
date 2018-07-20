@@ -95,6 +95,11 @@
          margin:0 auto;
          padding:0;
        }
+       :-webkit-full-screen-ancestor {
+          animation: none;
+          -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
+       }
       </style>
       <script src="https://vjs.zencdn.net/7.0.5/video.js"></script>
       <script src="/ready.min.js"></script>
