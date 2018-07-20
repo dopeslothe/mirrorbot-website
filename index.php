@@ -80,8 +80,8 @@
        .video-js{
          margin:0 auto;
          width:100%;
-         max-width:100%;
-         min-height:100%;
+         min-width:800px;
+         min-height:500px;
        }
        a:link,
        a:active,
