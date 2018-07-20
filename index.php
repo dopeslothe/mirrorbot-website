@@ -80,8 +80,6 @@
        .video-js{
          margin:0 auto;
          width:100%;
-         max-width:800px;
-         min-height:500px;
          width: 100% !important;
          height: 100% !important;
        }
