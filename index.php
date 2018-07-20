@@ -45,7 +45,7 @@
       return $return;
    }
    function videoplayer($data){
-      return'<video id="videoPlayer" class="video-js" controls autoplay preload="auto" width="800" height="500" poster="'.$data['video']['image_url'].'" data-setup="{}">
+      return'<video id="videoPlayer" class="video-js" controls autoplay preload="auto" width="60%" height="35%" poster="'.$data['video']['image_url'].'" data-setup="{}">
           <source src="'.$data['video']['url'].'" type="video/mp4">
           <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading to a web browser that
@@ -94,11 +94,6 @@
          max-width:100%;
          margin:0 auto;
          padding:0;
-       }
-       :-webkit-full-screen-ancestor {
-          animation: none;
-          -webkit-animation-fill-mode: none;
-          animation-fill-mode: none;
        }
       </style>
       <script src="https://vjs.zencdn.net/7.0.5/video.js"></script>
