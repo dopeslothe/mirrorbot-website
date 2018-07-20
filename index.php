@@ -82,6 +82,8 @@
          width:100%;
          max-width:800px;
          min-height:500px;
+         width: 100% !important;
+         height: 100% !important;
        }
        a:link,
        a:active,
@@ -95,7 +97,7 @@
          margin:0 auto;
          padding:0;
        }
-      </style>
+        </style>
       <script src="https://vjs.zencdn.net/7.0.5/video.js"></script>
       <script src="/ready.min.js"></script>
    </head>
