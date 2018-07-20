@@ -80,7 +80,7 @@
        .video-js{
          margin:0 auto;
          width:100%;
-         min-width:800px;
+         width:800px;
          min-height:500px;
        }
        a:link,
@@ -91,7 +91,7 @@
        }
        .ee{
          width:600px;
-         max-width:800px;
+         max-width:100%;
          margin:0 auto;
          padding:0;
        }
