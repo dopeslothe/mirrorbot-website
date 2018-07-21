@@ -49,7 +49,7 @@
           <source src="'.$data['video']['url'].'" type="video/mp4">
           <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading to a web browser that
-            <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
           </p>
       </video>';
    }
@@ -59,7 +59,7 @@
    <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <?php echo '<title>'.$data['title'].'</title>'; ?>
-      <link href="http://vjs.zencdn.net/7.0.5/video-js.css" rel="stylesheet">
+      <link href="https://vjs.zencdn.net/7.0.5/video-js.css" rel="stylesheet">
       <style type="text/css">
       html{
          min-height:100%;
