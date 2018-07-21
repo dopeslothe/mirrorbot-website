@@ -12,7 +12,7 @@
    $data['id'] = $data['urlinfo']['id'];
    $data['description'] = $data['urlinfo']['description'];
    $data['video']['file']=$data['id'].'.mp4';
-   $data['video']['scheme']='http://163.172.91.238/media/';
+   $data['video']['scheme']='https://mirrorbot.ga/media/';
    $data['video']['url']=$data['video']['scheme'].$data['video']['file'];
    $data['video']['image_url']='https://i.imgur.com/eqNf328.png';
    $data['redditurl'] = 'https://www.reddit.com/'.$data['id'].'/';
