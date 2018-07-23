@@ -76,6 +76,7 @@
          background-attachment: fixed;
          background: linear-gradient(#2a2a29, #1c1c1c);
          text-align: center;
+         margin-top: 5%;
        }
        .video-js{
          margin:0 auto;
