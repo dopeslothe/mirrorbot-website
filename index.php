@@ -2,7 +2,7 @@
    $data['discord']['url']='https://discord.gg/3mvFaCF';
    $data['discord']['text']='/r/PublicFreakout Discord';
    $data['server'] = $_SERVER;
-   $data['ee']='https://imgur.com/QExET6E.jpg';
+   $data['ee']='https://mirrorbot.ga/no_media.jpg';
    $data['url'] = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
    $data['escaped_url'] = htmlspecialchars($data['url'], ENT_QUOTES, 'UTF-8');
    $data['uri']=$_SERVER['REQUEST_URI'];
@@ -14,7 +14,7 @@
    $data['video']['file']=$data['id'].'.mp4';
    $data['video']['scheme']='https://mirrorbot.ga/media/';
    $data['video']['url']=$data['video']['scheme'].$data['video']['file'];
-   $data['video']['image_url']='https://i.imgur.com/eqNf328.png';
+   $data['video']['image_url']='https://mirrorbot.ga/video_background.png';
    $data['redditurl'] = 'https://www.reddit.com/'.$data['id'].'/';
    if (empty($data['id'])) {
       $data['short_url']='';
