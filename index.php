@@ -127,9 +127,8 @@
             }
             echo '<p><a href="' . $data['discord']['url'] . '" target="_blank" rel="noopener">' . $data['discord']['text'] . '</a></p>';
             echo '<p><a href="https://www.reddit.com/r/PublicFreakout" target="_blank" rel="noopener">Back to /r/PublicFreakout</a></p>';
-            echo ' ';
-            echo 'DMCA: dmca@mirrorbot.ga';
-            echo 'Anything else: admin@mirrorbot.ga';
+            echo '\n';
+            echo 'DMCA: dmca@mirrorbot.ga | Anything else: admin@mirrorbot.ga';
          ?>
       <script>
       function php_data(){
