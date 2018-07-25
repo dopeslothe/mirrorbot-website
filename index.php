@@ -116,7 +116,7 @@
             echo '<h1>'.$data['title'].'</h1>';
             if(!empty($data['description'])){
                echo '<h2>'.$data['description'].'</h2>';
-            }
+                } 
             if (!empty($data['id'])) {
                echo '<p>Permalink: <a href="' . $data['escaped_url'] . '" target="_blank" rel="noopener">' . $data['escaped_url'] . '</a></p>';
                echo '<p>Short Permalink: <a href="' . $data['short_url'] . '" target="_blank" rel="noopener">' . $data['short_url'] . '</a></p>';
@@ -127,7 +127,7 @@
             }
             echo '<p><a href="' . $data['discord']['url'] . '" target="_blank" rel="noopener">' . $data['discord']['text'] . '</a></p>';
             echo '<p><a href="https://www.reddit.com/r/PublicFreakout" target="_blank" rel="noopener">Back to /r/PublicFreakout</a></p>';
-            echo '<p><font size="10">DMCA: dmca@mirrorbot.ga | Anything else: admin@mirrorbot.ga</font></p>';
+            echo '<p><font size="10px">DMCA: dmca@mirrorbot.ga | Anything else: admin@mirrorbot.ga</font></p>';
          ?>
       <script>
       function php_data(){
