@@ -84,6 +84,10 @@
          max-width: 100%;
          min-height:500px;
        }
+       .video-js,
+       .vjs-poster{
+         background-color:transparent;
+       }
        a:link,
        a:active,
        a:visited,
