@@ -59,6 +59,8 @@
    <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <?php echo '<title>'.$data['title'].'</title>'; ?>
+      <script src="https://vjs.zencdn.net/7.0.5/video.js"></script>
+      <script src="/ready.min.js"></script>
       <link href="https://vjs.zencdn.net/7.0.5/video-js.css" rel="stylesheet">
       <style type="text/css">
       html{
@@ -109,8 +111,7 @@
       <script src="/usr/local/lib/node_modules/videojs-chromecast/dist/videojs-chromecast.js"></script>
       -->
       
-      <script src="https://vjs.zencdn.net/7.0.5/video.js"></script>
-      <script src="/ready.min.js"></script>
+
    </head>
    <body>
          <?php
