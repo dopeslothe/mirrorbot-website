@@ -45,7 +45,7 @@
       return $return;
    }
    function videoplayer($data){
-      return'<video id="videoPlayer" class="video-js" width="60%" height="35%" data-setup="{"autoplay": true, "controls": true, "poster": .$data['video']['image_url'].}">
+      return'<video id="videoPlayer" class="video-js" width="60%" height="35%" data-setup="{"autoplay": true, "controls": true, "poster": $data['video']['image_url']}">
           <source src="'.$data['video']['url'].'" type="video/mp4">
           <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading to a web browser that
