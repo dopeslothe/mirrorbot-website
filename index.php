@@ -142,15 +142,20 @@
       let data=php_data();
       </script>
       <script>
-        $(window).keypress(function(e) {
-        var video = document.getElementById("videoPlayer");
-        if (e.which == 32) {
-            if (video.player.paused)
-            video.player.play();
-            else
-            video.player.pause();
+      document.getElementById("videoPlayer").onkeypress = function() {toggleplay(event)};
+      
+        function toggleplay(event) {
+            var key = event.which || event.keyCode;
+            if (key == 32) {
+                var video = document.getElementById("videoPlayer");
+                if (video.player.paused)
+                    video.player.play();
+                else
+                    video.player.pause();
+            }
+        
         }
-        });
       </script>
+      
    </body>
 </html>
