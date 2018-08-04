@@ -145,10 +145,10 @@
         $(window).keypress(function(e) {
         var video = document.getElementById("videoPlayer");
         if (e.which == 32) {
-            if (video.paused)
-            video.play();
+            if (video.player.paused)
+            video.player.play();
             else
-            video.pause();
+            video.player.pause();
         }
         });
       </script>
