@@ -114,6 +114,17 @@
 
    </head>
    <body>
+         <script> 
+        document.getElementById(videoPlayer).onkeypress = function(){toggleplay};
+        function toggleplay() {
+        var key = event.which || event.keyCode;
+        var video = document.getElementById("videoPlayer");
+        if (video.player.paused)
+        video.player.play();
+        else
+        video.player.pause(); 
+        }
+      </script>
          <?php
             if (!empty($data['id'])) {
                echo $data['video']['player'];
@@ -141,17 +152,7 @@
       }
       let data=php_data();
       </script>
-      <script> 
-      document.getElementById(videoPlayer).onkeypress = function(){toggleplay};
-        function toggleplay() {
-            var key = event.which || event.keyCode;
-                var video = document.getElementById("videoPlayer");
-                if (video.player.paused)
-                    video.player.play();
-                else
-                    video.player.pause(); 
-        }
-      </script>
+
       
    </body>
 </html>
