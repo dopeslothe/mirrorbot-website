@@ -142,17 +142,16 @@
       let data=php_data();
       </script>
       <script>
-      document.getElementById("videoPlayer").onkeypress = function() {toggleplay(event)};
+      document.getElementById("videoPlayer").onkeypress = function() {toggleplay()};
       
-        function toggleplay(event) {
+        function toggleplay() {
             var key = event.which || event.keyCode;
-            if (key == 32) {
                 var video = document.getElementById("videoPlayer");
                 if (video.player.paused)
                     video.player.play();
                 else
                     video.player.pause();
-            }
+            
         
         }
       </script>
