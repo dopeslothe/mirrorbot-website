@@ -114,17 +114,6 @@
 
    </head>
    <body>
-         <script> 
-        document.getElementById(videoPlayer).onkeypress = function(){toggleplay};
-        function toggleplay() {
-        var key = event.which || event.keyCode;
-        var video = document.getElementById("videoPlayer");
-        if (video.player.paused)
-        video.player.play();
-        else
-        video.player.pause(); 
-        }
-      </script>
          <?php
             if (!empty($data['id'])) {
                echo $data['video']['player'];
@@ -145,6 +134,7 @@
             echo '<p><a href="https://www.reddit.com/r/PublicFreakout" target="_blank" rel="noopener">Back to /r/PublicFreakout</a></p>';
             echo '<p><small>DMCA: dmca@mirrorbot.ga | Anything else: admin@mirrorbot.ga</small></p>';
          ?>
+
       <script>
       function php_data(){
          let php_data=<?php echo json_encode($data);?>;
@@ -153,6 +143,20 @@
       let data=php_data();
       </script>
 
-      
+        <script>
+        document.addEventListener("keydown", toggleplay, false);
+        
+        function toggleplay(event) {
+        event.preventDefault();
+        var key = event.which || event.keyCode;
+        var video = document.getElementById("videoPlayer");
+        if (key == 32) {
+            if (video.player.paused())
+                {video.player.play();}
+            else
+                {video.player.pause();} 
+        }
+        }
+        </script>
    </body>
 </html>
