@@ -45,7 +45,7 @@
       return $return;
    }
    function videoplayer($data){
-      return'<video id="videoPlayer" class="video-js vjs-big-play-centered" controls autoplay preload="auto" width="60%" height="35%" poster="'.$data['video']['image_url'].'" data-setup="{}">
+      return'<video id="videoPlayer" onkeypress="toggleplay(event)" class="video-js vjs-big-play-centered" controls autoplay preload="auto" width="60%" height="35%" poster="'.$data['video']['image_url'].'" data-setup="{}">
           <source src="'.$data['video']['url'].'" type="video/mp4">
           <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading to a web browser that
@@ -141,18 +141,14 @@
       }
       let data=php_data();
       </script>
-      <script>
-      document.getElementById("videoPlayer").onkeypress = function() {toggleplay()};
-      
-        function toggleplay() {
+      <script>      
+        function toggleplay(event) {
             var key = event.which || event.keyCode;
                 var video = document.getElementById("videoPlayer");
                 if (video.player.paused)
                     video.player.play();
                 else
-                    video.player.pause();
-            
-        
+                    video.player.pause(); 
         }
       </script>
       
