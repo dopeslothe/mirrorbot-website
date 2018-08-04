@@ -56,6 +56,19 @@
 ?>
 <!doctype html>
 <html>
+
+<script>
+$(window).keypress(function(e) {
+  var video = document.getElementById("videoPlayer");
+  if (e.which == 32) {
+    if (video.paused)
+      video.play();
+    else
+      video.pause();
+  }
+});
+</script>
+
    <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <?php echo '<title>'.$data['title'].'</title>'; ?>
