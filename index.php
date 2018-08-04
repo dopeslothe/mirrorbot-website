@@ -142,7 +142,6 @@
       let data=php_data();
       </script>
       <script>
-      <script>
         $(window).keypress(function(e) {
         var video = document.getElementById("videoPlayer");
         if (e.which == 32) {
@@ -152,7 +151,6 @@
             video.pause();
         }
         });
-</script>
       </script>
    </body>
 </html>
