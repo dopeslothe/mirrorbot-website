@@ -140,10 +140,10 @@
         document.addEventListener("keydown", toggleplay, false);
         
         function toggleplay(event) {
-        event.preventDefault();
         var key = event.which || event.keyCode;
         var video = document.getElementById("videoPlayer");
         if (key == 32) {
+        event.preventDefault();
             if (video.player.paused())
                 {video.player.play();}
             else
