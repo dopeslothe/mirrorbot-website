@@ -55,6 +55,7 @@
    }
 ?>
 <!doctype html>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://mirrorbot.ga/ https://vjs.zencdn.net/; style-src 'self' 'unsafe-inline' https://vjs.zencdn.net/; script-src 'self' 'unsafe-inline' https://vjs.zencdn.net/; font-src 'self' data:">
 <html>
    <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
