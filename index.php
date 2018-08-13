@@ -105,14 +105,6 @@
        }
         </style>
 
-      <!-- Chromecast support (not yet implemented) -->
-      <!--
-      <head data-cast-api-enabled="true"> 
-      <script src="http://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
-      <script src="/usr/local/lib/node_modules/videojs-chromecast/dist/videojs-chromecast.js"></script>
-      -->
-      
-
    </head>
    <body>
          <?php
