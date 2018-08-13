@@ -55,7 +55,7 @@
    }
 ?>
 <!doctype html>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://mirrorbot.ga/ https://vjs.zencdn.net/; style-src 'self' 'unsafe-inline' https://vjs.zencdn.net/; script-src 'self' 'unsafe-inline' https://vjs.zencdn.net/; font-src 'self' data:; frame-ancestors 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://mirrorbot.ga/ https://vjs.zencdn.net/; style-src 'self' 'unsafe-inline' https://vjs.zencdn.net/; script-src 'self' 'unsafe-inline' https://vjs.zencdn.net/; font-src 'self' data:">
 <html>
 <meta http-equiv=""
    <head>
