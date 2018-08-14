@@ -55,10 +55,15 @@
    }
 ?>
 <!doctype html>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://mirrorbot.ga/ https://vjs.zencdn.net/; style-src 'self' 'unsafe-inline' https://vjs.zencdn.net/; script-src 'self' 'unsafe-inline' https://vjs.zencdn.net/; font-src 'self' data:">
+<meta http-equiv="Content-Security-Policy" content="
+    default-src 'self' 'unsafe-inline' https://mirrorbot.ga/ https://vjs.zencdn.net/ pagead2.googlesyndication.com/ https://googleads.g.doubleclick.net/;
+    style-src 'self' 'unsafe-inline' https://vjs.zencdn.net/ pagead2.googlesyndication.com/; 
+    script-src 'self' 'unsafe-inline' https://vjs.zencdn.net/ pagead2.googlesyndication.com/ https://adservice.google.com/ blob:;
+    font-src 'self' data: pagead2.googlesyndication.com/">
 <html>
-<meta http-equiv=""
    <head>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-4943137957643465",enable_page_level_ads: true});</script>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <?php echo '<title>'.$data['title'].'</title>'; ?>
       <script src="https://vjs.zencdn.net/7.0.5/video.js"></script>
